@@ -107,3 +107,21 @@ export const useCitizenById = (id: number | null) =>
     queryFn: () => fetchCitizenById(id!),
     enabled: id !== null,
   })
+
+export const useSearchCitizens = (search: string) => {
+  return useQuery({
+    queryKey: ['citizens', 'search', search],
+    queryFn: () =>
+      fetchCitizens({
+        filters: {
+          search,
+          city: '',
+          gender: '',
+          status: '',
+        },
+        offset: 0,
+        limit: 20,
+      }),
+    enabled: search.length >= 2,
+  })
+}

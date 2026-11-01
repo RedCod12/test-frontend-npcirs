@@ -37,13 +37,6 @@ export function CitizenCardContent({
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
     const removeMutation = useRemoveFamilyMember(citizenId)
 
-    const handleDelete = async (relativeId: number) => {
-        try {
-            await removeMutation.mutateAsync(relativeId)
-        } catch {
-        }
-    }
-
     if (activeTab !== FAMILY_TAB) {
         return (
             <CitizenForm
@@ -93,7 +86,7 @@ export function CitizenCardContent({
                 deletingId={removeMutation.isPending ? removeMutation.variables : null}
                 isEditing={isEditing}
                 onOpen={onOpenCitizen}
-                onDelete={handleDelete}
+                onDelete={removeMutation.mutate}
             />
 
             {removeMutation.isError && (
