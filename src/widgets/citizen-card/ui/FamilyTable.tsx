@@ -27,11 +27,11 @@ export const FamilyTable = ({
         <thead className="bg-slate-50 text-xs text-slate-500">
           <tr>
             {FAMILY_COLUMNS.map(column => (
-              <th key={column.key} scope="col" className="px-3 py-3 font-semibold">
+              <th key={column.key} scope="col" className="px-3 py-3 text-center font-semibold">
                 {column.title}
               </th>
             ))}
-            <th className="px-3 py-3 text-right">Действия</th>
+            <th className="px-3 py-3 text-center">Действия</th>
           </tr>
         </thead>
 
@@ -45,7 +45,7 @@ export const FamilyTable = ({
               {FAMILY_COLUMNS.map(column => (
                 <td
                   key={column.key}
-                  className={`px-3 py-3 ${column.className}`}
+                  className={`px-3 py-3 text-center ${column.className}`}
                 >
                   {column.render(member)}
                 </td>

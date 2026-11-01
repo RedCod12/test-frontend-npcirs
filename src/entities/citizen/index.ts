@@ -28,5 +28,6 @@ export {
   useAddFamilyMember,
   useRemoveFamilyMember,
   useCitizenById,
+  useSearchCitizens,
 } from './api/citizenQueries'
 export { StatusBadge } from './ui/StatusBadge'

@@ -2,6 +2,7 @@ import { z } from 'zod'
 import {
     CITIES,
     CITIZEN_CATEGORIES,
+    CITIZEN_STATUSES,
     EDUCATION_LEVELS,
     GENDERS,
 } from '@/entities/citizen'
@@ -46,6 +47,7 @@ export const citizenFormSchema = z.object({
         z.literal(''),
         z.email('Укажите корректный email'),
     ]),
+    status: z.enum(CITIZEN_STATUSES),
     category: z.enum(CITIZEN_CATEGORIES),
     note: optionalText,
     hasConsent: z.boolean(),

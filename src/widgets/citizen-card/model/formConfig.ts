@@ -1,4 +1,10 @@
-import { CITIES, CITIZEN_CATEGORIES, EDUCATION_LEVELS, GENDERS } from '@/entities/citizen'
+import {
+  CITIES,
+  CITIZEN_CATEGORIES,
+  CITIZEN_STATUSES,
+  EDUCATION_LEVELS,
+  GENDERS,
+} from '@/entities/citizen'
 import type { FieldConfig } from '@/shared/ui'
 
 export const FORM_SECTIONS = {
@@ -11,7 +17,9 @@ export const FORM_SECTIONS = {
     { key: 'email', label: 'Email', type: 'email', placeholder: 'example@mail.ru' },
     { key: 'category', label: 'Категория', type: 'select', options: CITIZEN_CATEGORIES },
     { key: 'note', label: 'Примечание', type: 'textarea', placeholder: 'Дополнительная информация' },
+    { key: 'status', label: 'Статус', type: 'select', options: CITIZEN_STATUSES },
     { key: 'hasConsent', label: 'Согласие на обработку данных', type: 'checkbox' },
+
   ],
   'Документы': [
     { key: 'passportSeries', label: 'Серия паспорта', type: 'text', placeholder: '00 00' },
@@ -34,6 +42,7 @@ export const FORM_SECTIONS = {
     { key: 'graduationYear', label: 'Год окончания', type: 'number', placeholder: 'Например, 2024' },
     { key: 'specialty', label: 'Специальность', type: 'text', placeholder: 'Название специальности' },
   ],
+
 } satisfies Record<string, readonly FieldConfig[]>
 
 export type FormSectionTitle = keyof typeof FORM_SECTIONS

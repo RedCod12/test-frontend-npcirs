@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Citizen } from '@/entities/citizen'
+import { StatusBadge, type Citizen } from '@/entities/citizen'
 import { Button, ErrorMessage, Tabs } from '@/shared/ui'
 import { CARD_TABS, type CardTab } from '../model/formConfig'
 import { useCitizenForm } from '../model/useCitizenForm'
@@ -36,9 +36,14 @@ export function CitizenCardDetails({
         </div>
 
         <div className="min-w-0">
-          <h3 className="truncate text-lg font-semibold text-slate-900">
-            {citizen.fullName}
-          </h3>
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="truncate text-lg font-semibold text-slate-900">
+              {citizen.fullName}
+            </h3>
+
+            <StatusBadge status={citizen.status} />
+          </div>
+
           <p className="text-xs text-slate-500">
             ID {citizen.id} · {citizen.category}
           </p>

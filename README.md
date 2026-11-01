@@ -27,7 +27,7 @@ npm run build
 
 ## Стек
 
-React 18, TypeScript, Vite, Tailwind CSS 4, TanStack Query, MSW, Recharts.
+React 18, TypeScript, Vite, Tailwind CSS 4, TanStack Query, Zod, MSW, Recharts.
 
 ## Структура
 
